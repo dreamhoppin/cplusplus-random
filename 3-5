@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    string inputFileName;
+
+    cout << "Enter the input file name: ";
+    cin >> inputFileName;
+
+    ifstream inputFile(inputFileName);
+    ofstream outputFile("Ch3_Ex5Output.dat");
+
+    if (!inputFile.is_open() || !outputFile.is_open()) {
+        cout << "Error opening files." << endl;
+        return 1;
+    }
+
+    string firstName, lastName;
+    double currentSalary, payIncrease;
+
+    outputFile << fixed << showpoint << setprecision(2);
+
+    while (inputFile >> lastName >> firstName >> currentSalary >> payIncrease) {
+        double updatedSalary = currentSalary + (currentSalary * (payIncrease / 100));
+        outputFile << firstName << " " << lastName << " " << updatedSalary << endl;
+    }
+
+    inputFile.close();
+    outputFile.close();
+
+    cout << "Data written to Ch3_Ex5Output.dat" << endl;
+
+    return 0;
+}
