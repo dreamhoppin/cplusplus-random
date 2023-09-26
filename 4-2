@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double userNumber1, userNumber2, userNumber3;
+
+    cout << "Enter the three numbers: ";
+    cin >> userNumber1 >> userNumber2 >> userNumber3;
+
+    if (userNumber1 > userNumber2) {
+        swap(userNumber1, userNumber2);
+    }
+
+    if (userNumber1 > userNumber3) {
+        swap(userNumber1, userNumber3);
+    }
+
+    if (userNumber2 > userNumber3)
+        swap(userNumber2, userNumber3);
+    cout << "The numbers in ascending order are: " << userNumber1 << ", " << userNumber2 << ", " << userNumber3 << endl;
+
+    return 0;
+}
