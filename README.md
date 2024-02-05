@@ -1,1 +1,1 @@
-# random c++ programs I've developed.
+just for a class
